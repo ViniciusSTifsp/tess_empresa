@@ -1,14 +1,135 @@
-/* estilo geral */
-* {
+/* Definições globais */
+body {
+    background-color: #F3F4F6; /* Creme claro para o fundo */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Texto escuro para boa legibilidade */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background-color: #f7f7ff;
-    height: 100vh;
+h1, h2, h3 {
+    color: #0e0e0e; /* Azul para títulos */
+}
+
+a {
+    text-decoration: none;
+    color: #030303;
+}
+
+a:hover {
+    color: #0D47A1; /* Tom mais escuro de azul quando passar o mouse */
+}
+
+/* Estilos de cabeçalho e barra de navegação */
+.navbar {
+    background-color: #E8EAF6; /* Azul Serenite */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #0D47A1;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #333; /* Cor dos links */
+    font-size: 1.1rem;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0D47A1; /* Cor de destaque nos links */
+}
+
+/* Estilo dos cards (Missão, Visão, Valores) */
+.card {
+    background-color: #E1F5FE; /* Azul claro */
+    border: 1px solid #B3E5FC; /* Borda mais suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px;
+    height: 100%; /* Garante que o card tenha altura total */
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    margin: 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #000000; /* Azul escuro para os títulos */
+    font-weight: bold;
+}
+
+.card-text, .card-body ul {
+    font-size: 1rem;
+    color: #0c0c0c; /* Texto escuro para facilitar leitura */
+}
+
+/* Estilo das seções de participantes e responsividade */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around; /* Alinha os cards no centro */
+    gap: 0px; /* Espaçamento entre os cards */
+    flex-wrap: wrap;
+}
+
+/* Ajuste de largura e espaçamento dos cards */
+.col-md-4 {
+    padding: 10px; /* Se precisar de um espaçamento bem pequeno entre as colunas */
+}
+
+.card-img-top {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    height: 300px; /* Define uma altura para a imagem */
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Alinha o conteúdo horizontalmente */
+    text-align: center; /* Garante que o texto esteja centralizado */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px; /* Ajusta a altura das imagens */
+    }
+
+    .card-title {
+        font-size: 1rem; /* Ajusta o tamanho do título em telas pequenas */
+    }
+
+    .row {
+        gap: 10px; /* Espaçamento entre os cards */
+    }
+
+    .col-md-3 {
+        width: 100%; /* Faz os cards ocuparem toda a largura em telas pequenas */
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1rem; /* Diminui o tamanho da fonte nos links de navegação em telas pequenas */
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilo geral */
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
 .interface {
@@ -29,40 +150,24 @@ body {
     border-radius: 30px;
     cursor: pointer;
     transform: scale(1.05);
-    transition: .2s;
+    transition: 0.2s;
 }
 
-h2#titulo {
+h2#titulo, h2#titulo2, #titulo3 {
     color: #000000;
     font-size: 40px;
     text-align: center;
 }
 
-h2#titulo span {
+#sobre_nos{
+    color: #1a7676;
+}
+
+h2#titulo span, h2#titulo2 span, #titulo3 span {
     color: #21B4B4;
 }
 
-h2#titulo2 {
-    color: #000000;
-    font-size: 40px;
-    text-align: center;
-}
-
-h2#titulo2 span {
-    color: #21B4B4;
-}
-
-#titulo3 {
-    color: #000000;
-    font-size: 40px;
-    text-align: center;
-}
-
-#titulo3 span {
-    color: #21B4B4;
-}
-
-/* estilo cabeçalho*/
+/* Estilo cabeçalho */
 .logo a img {
     width: 50px;
 }
@@ -71,7 +176,7 @@ header {
     padding: 40px 4%;
 }
 
-header>.interface {
+header > .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,7 +186,7 @@ header a {
     color: #1a7676;
     text-decoration: none;
     display: inline-block;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 header a:hover {
@@ -98,7 +203,7 @@ header nav ul li {
     padding: 0 40px;
 }
 
-/* estilo-topo-do-site*/
+/* Estilo topo do site */
 section .topo-do-site {
     padding: 40px 4%;
 }
@@ -117,7 +222,7 @@ section.topo-do-site .flex {
 
 .topo-do-site .txt-topo-site {
     color: black;
-    margin: 80px 0px;
+    margin: 80px 0;
     text-align: justify;
 }
 
@@ -146,7 +251,7 @@ section.topo-do-site .flex {
     }
 }
 
-/*estilo das especialidades*/
+/* Estilo das especialidades */
 section .especialidades {
     padding: 40px 4%;
 }
@@ -157,7 +262,7 @@ section .especialidades {
     border-radius: 20px;
     border: 2px solid #f7f7ff;
     margin: 30px;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .especialidades .especialidades-box:hover {
@@ -179,7 +284,7 @@ section .especialidades {
     text-align: justify;
 }
 
-/*estilo do sobre*/
+/* Estilo sobre */
 section.sobre {
     padding: 40px 4%;
 }
@@ -211,11 +316,7 @@ section.sobre .flex {
     display: block;
 }
 
-.flex {
-    flex-direction: unset;
-}
-
-#equipe {
+.sobre #equipe {
     text-align: center;
 }
 
@@ -223,50 +324,7 @@ section.sobre .flex {
     color: #21B4B4;
 }
 
-/*estilo equipe*/
-.flex {
-    justify-content: center;
-}
-
-section .equipe {
-    padding: 40px 4%;
-}
-
-.equipe .especialidades-box {
-    color: #000000;
-    padding: 20px;
-    border-radius: 20px;
-    border: 2px solid #f7f7ff;
-    margin: 30px;
-    transition: .2s;
-}
-
-.equipe .especialidades-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 8px #21B4B4;
-}
-
-.equipe .especialidades-box i {
-    font-size: 70px;
-    color: #000000;
-}
-
-.equipe.especialidades-box h3 {
-    font-size: 28px;
-    margin: 100px;
-}
-
-.equipe .especialidades-box p {
-    text-align: justify;
-}
-
-.imagem-vini img {
-    float: left;
-    width: 150px;
-    margin: 20px;
-}
-
-/* estilo rodape*/
+/* Estilo rodapé */
 footer {
     padding: 10px 4%;
     background-color: #1a7676;
@@ -285,7 +343,7 @@ footer .line-footer {
 }
 
 .borda {
-    border-top: 2px solid #21b4b4
+    border-top: 2px solid #21b4b4;
 }
 
 .logo-footer img {
@@ -297,29 +355,11 @@ footer .line-footer {
     color: white;
 }
 
-
-
-
-
+/* Responsividade */
 @media screen and (max-width: 768px) {
-
-    /*geral*/
     .flex {
         flex-direction: column;
-
     }
-
-    .topo-do-site .flex {
-        flex-direction: column-reverse;
-    }
-
-    /*cabeçalho*/
-    .menu-desktop,
-    .tess-contato {
-        display: none;
-    }
-
-    /*topo do site*/
 
     section.topo-do-site {
         padding: 20px 8%;
@@ -333,7 +373,33 @@ footer .line-footer {
         width: 400px;
         padding: 40px;
     }
+
     .img-sobre img {
         width: 400px;
     }
+}
+
+/* Estilo para a caixinha (corrigido para não repetir) */
+.container {
+    background-color: #f8f9fa;  /* Cor de fundo suave */
+    border: 2px solid #ffffff;  /* Cor da borda */
+    border-radius: 10px;        /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    padding: 20px;              /* Espaçamento interno */
+}
+
+h2.display-5 {
+    color: #d81d16;  /* Cor azul para o título */
+    font-size: 2.5rem;  /* Tamanho maior para o título */
+    font-weight: bold;  /* Título em negrito */
+}
+
+.container p {
+    font-size: 1.1rem;  /* Tamanho de fonte para os parágrafos */
+    color: #333;        /* Cor do texto */
+    line-height: 1.6;    /* Altura da linha para facilitar a leitura */
+}
+
+.text-center {
+    text-align: center; /* Alinhamento central */
 }
